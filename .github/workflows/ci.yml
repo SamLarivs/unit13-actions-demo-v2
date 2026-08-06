@@ -1,0 +1,37 @@
+name: CI
+
+# Runs on direct pushes to main, on every pull request targeting main,
+# and can be started by hand from the Actions tab (workflow_dispatch).
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Celebrate on success
+        if: ${{ success() }}
+        run: npm run success
+
+      - name: Console cat on failure
+        if: ${{ failure() }}
+        run: npm run fail

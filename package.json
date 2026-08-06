@@ -1,0 +1,30 @@
+{
+  "name": "unit13-actions-demo",
+  "version": "2.0.0",
+  "description": "A minimal demo for teaching GitHub Actions CI/CD: run tests on every push/PR, then celebrate on success or print a console cat on failure.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "success": "node scripts/success.js",
+    "fail": "node scripts/fail.js"
+  },
+  "keywords": [
+    "github-actions",
+    "ci",
+    "cd",
+    "vitest",
+    "teaching-demo"
+  ],
+  "author": "Sam Lariviere",
+  "license": "ISC",
+  "dependencies": {
+    "figlet": "^1.8.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.8"
+  }
+}
