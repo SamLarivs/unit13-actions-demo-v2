@@ -21,7 +21,7 @@ safe to merge.
 sum.js                     # the "app" under test
 sum.test.js                # Vitest tests for sum()
 scripts/success.js         # prints a figlet banner when CI is green
-scripts/fail.js            # prints an ASCII cat when CI is red
+scripts/meow.js            # prints an ASCII cat (cat-me) when CI is red
 .github/workflows/ci.yml   # the CI workflow
 ```
 
@@ -42,7 +42,7 @@ npm run test:watch # re-run on change while developing
 3. Installs dependencies with `npm ci`
 4. Runs `npm test`
 5. **On success** (`if: success()`) runs `npm run success`
-6. **On failure** (`if: failure()`) runs `npm run fail`
+6. **On failure** (`if: failure()`) runs `npm run meow`
 
 It triggers on three events:
 

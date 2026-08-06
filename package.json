@@ -10,7 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "success": "node scripts/success.js",
-    "fail": "node scripts/fail.js"
+    "meow": "node scripts/meow.js"
   },
   "keywords": [
     "github-actions",
@@ -22,6 +22,7 @@
   "author": "Sam Lariviere",
   "license": "ISC",
   "dependencies": {
+    "cat-me": "^1.0.3",
     "figlet": "^1.8.0"
   },
   "devDependencies": {

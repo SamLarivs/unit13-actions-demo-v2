@@ -34,4 +34,4 @@ jobs:
 
       - name: Console cat on failure
         if: ${{ failure() }}
-        run: npm run fail
+        run: npm run meow
