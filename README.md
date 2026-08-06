@@ -38,7 +38,7 @@ npm run test:watch # re-run on change while developing
 `.github/workflows/ci.yml` defines a single `test` job that:
 
 1. Checks out the code (`actions/checkout@v5`)
-2. Installs Node 20 with an npm cache (`actions/setup-node@v5`)
+2. Installs the current Node LTS (`lts/*`) with an npm cache (`actions/setup-node@v5`)
 3. Installs dependencies with `npm ci`
 4. Runs `npm test`
 5. **On success** (`if: success()`) runs `npm run success`

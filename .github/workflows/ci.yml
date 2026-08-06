@@ -19,7 +19,9 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          # 'lts/*' = whatever the current Node LTS is, so CI never goes stale.
+          # Swap for a hard version (e.g. '20') when you need a reproducible pin.
+          node-version: 'lts/*'
           cache: npm
 
       - name: Install dependencies
